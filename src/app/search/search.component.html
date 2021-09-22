@@ -1,0 +1,40 @@
+<div class="wrapper">
+
+	<div class="search-bar">
+		<input
+    [(value)]="search"
+    appArrowSelector
+    [counter]="selectedHit"
+    [min]="0"
+    [max]="hits.length - 1"
+    [loop]="true"
+    [inverted]="true"
+    (selected)="select($event, true)"
+    placeholder="Buscar"
+    [spellcheck]="false"
+    (input)="onSearchInput($event)"/>
+		<fa name="search"></fa>
+	</div>
+
+	<div class="dropdown">
+		<ul [@listHeader]="hasFocus" [@stagger]="hits">
+
+			<li *ngIf="hasFocus" class="list-header">
+				<div class="li-container">
+					<div class="title">Nombre</div>
+					<div class="title">Color</div>
+				</div>
+			</li>
+
+			<li *ngFor="let hit of hits; let i = index" class="list-item" [class.selected]="selectedHit === i"
+				(mouseenter)="select(i)">
+				<div class="li-container">
+					<div class="title">{{hit.nombre}}</div>
+					<app-colorbox [color]="hit.color"></app-colorbox>
+				</div>
+			</li>
+
+		</ul>
+	</div>
+
+</div>

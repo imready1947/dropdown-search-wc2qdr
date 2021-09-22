@@ -1,0 +1,25 @@
+/* Add application styles & imports to this file! */
+
+/* 
+strawberry #eb0927
+background #1d1d20
+
+*/
+
+:root {
+  --bg-color:#9fe681;
+  --font-color: rgb(255, 255, 255);
+  --placeholder-color: rgba(255, 255, 255, 0.5);
+}
+
+body {
+  font-family: 'Comfortaa', cursive;
+  font-size: 20px;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  overflow: hidden;
+}
+
+input {
+  font-family: 'Comfortaa', cursive;
+}
